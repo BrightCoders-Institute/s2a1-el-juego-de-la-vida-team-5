@@ -12,7 +12,7 @@ class  Celula
 end
 
 class Tablero
-  CARACTER_CELULA_VIVA = '+'
+  CARACTER_CELULA_VIVA = '*'
   CARACTER_CELULA_MUERTA = '.'
   attr_reader :tablero
 
