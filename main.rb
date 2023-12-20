@@ -6,14 +6,14 @@ def obtener_parametro(nombre)
   parametro = 0
 
   loop do
-    print "Cantidad de #{nombre} (debe ser mayor a 0): "
+    print "Cantidad de #{nombre} (debe estar entre 5 y 20): "
     parametro = gets.chomp.to_i
 
-    raise ArgumentError unless parametro.positive?
+    raise ArgumentError unless parametro.between?(5, 20)
 
     break
   rescue ArgumentError
-    puts 'El valor especificado no es un entero positivo.'
+    puts 'El valor especificado no es un entero positivo entre 5 y 20.'
   end
 
   parametro
@@ -33,9 +33,13 @@ puts ''
 
 filas = obtener_parametro('filas')
 columnas = obtener_parametro('columnas')
+cantidad_celulas_iniciales = rand(5...filas * columnas)
+limpiar_consola
 
-# tablero = Tablero.new(columnas, filas)
-# tablero.imprimir_tablero
-# puts ''
-# tablero.calcular_siguiente_generacion
-# tablero.imprimir_tablero
+tablero = Tablero.new(columnas, filas, cantidad_celulas_iniciales)
+loop do
+  tablero.imprimir_tablero
+  sleep 0.8
+  limpiar_consola
+  tablero.calcular_siguiente_generacion
+end

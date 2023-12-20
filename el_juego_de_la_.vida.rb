@@ -7,16 +7,28 @@ class Tablero
   CARACTER_CELULA_MUERTA = '.'
   attr_reader :tablero
 
-  def initialize(filas, columnas)
+  def initialize(filas, columnas, cantidad_celulas_iniciales)
     @filas = filas
     @columnas = columnas
-    @tablero = [[0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 1, 0, 0, 0],
-                [0, 0, 0, 1, 1, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0]]
+    @cantidad_celulas_iniciales = cantidad_celulas_iniciales
+
+    @tablero = Array.new(filas) { Array.new(columnas) { 0 } }
+    definir_celulas_iniciales
   end
 
-  def 
+  def definir_celulas_iniciales
+    @cantidad_celulas_iniciales.times do
+      loop do
+        fila = rand(0..@filas - 1)
+        columna = rand(0..@columnas - 1)
+
+        next if @tablero[fila][columna] == 1
+
+        @tablero[fila][columna] = 1
+        break
+      end
+    end
+  end
 
   def calcular_siguiente_generacion
     @tablero = @tablero.each_with_index.map do |fila, i|
