@@ -11,7 +11,7 @@ class Board
 
   attr_reader :board
 
-  # Method to initialize objects
+  # Method to initialize objects.
   def initialize(rows, columns, initial_cells_amount)
     @rows = rows
     @columns = columns
@@ -19,6 +19,10 @@ class Board
 
     @board = Array.new(rows) { Array.new(columns) { 0 } }
     obtain_initial_cells
+
+    # @rows = 3
+    # @columns = 4
+    # @board = [[0, 0, 0, 0], [0, 1, 1, 1], [1, 0, 0, 0]]
   end
 
   private
@@ -54,12 +58,12 @@ class Board
       count_neighbors_row(obtain_row(row + 1), column)
   end
 
-  # Method to get the row
+  # Method to get a row.
   def obtain_row(row)
     row.between?(0, @rows - 1) ? @board[row] : []
   end
 
-  # Method to count neighbors per row
+  # Method to count neighbors per row.
   def count_neighbors_row(neighbors, column)
     return 0 if neighbors.empty?
 

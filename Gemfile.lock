@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ffi (1.16.3-x64-mingw-ucrt)
+    minitest (5.20.0)
+
+PLATFORMS
+  x64-mingw-ucrt
+
+DEPENDENCIES
+  ffi
+  minitest
+
+BUNDLED WITH
+   2.4.10
