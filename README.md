@@ -38,7 +38,7 @@ Conway's game of life was developed in Ruby, a game that relies on some mathemat
 
 ## How to Use the Project.
 
-Run it and it will end until all the cells die.
+Run it using "ruby main.rb". It will end until all the cells die.
 
 ## Credits
 
