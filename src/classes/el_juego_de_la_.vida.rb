@@ -11,7 +11,7 @@ class Board
 
   attr_reader :board
 
-  # Method to initialize objects.
+  # Method to initialize objects
   def initialize(rows, columns, initial_cells_amount)
     @rows = rows
     @columns = columns
@@ -19,10 +19,6 @@ class Board
 
     @board = Array.new(rows) { Array.new(columns) { 0 } }
     obtain_initial_cells
-
-    # @rows = 3
-    # @columns = 4
-    # @board = [[0, 0, 0, 0], [0, 1, 1, 1], [1, 0, 0, 0]]
   end
 
   private
@@ -50,7 +46,36 @@ class Board
       number_neighbors == 3 ? 1 : 0
     end
   end
+=begin
+class Cell
+  attr_reader :CELL_CHARACTER
 
+  def set_cell_status(number_neighbors)
+end
+
+class AliveCell < Cell
+  CELL_CHARACTER = '+'
+
+  def set_cell_status(number_neighbors)
+    number_neighbors.between?(2, 3) ? 1 : 0
+  end
+end
+
+class DeadCell < Cell
+  CELL_CHARACTER = '.'
+
+  def set_cell_status(number_neighbors)
+    number_neighbors == 3 ? 1 : 0
+  end
+end
+alive_cell = AliveCell.new
+dead_cell = DeadCell.new
+
+alive_cell.set_cell_status(2)
+
+dead_cell.set_cell_status(3)
+
+=end
   # Method to count neighbors.
   def count_neighbors(row, column)
     count_neighbors_row(obtain_row(row - 1), column) +
@@ -58,12 +83,12 @@ class Board
       count_neighbors_row(obtain_row(row + 1), column)
   end
 
-  # Method to get a row.
+  # Method to get the row
   def obtain_row(row)
     row.between?(0, @rows - 1) ? @board[row] : []
   end
 
-  # Method to count neighbors per row.
+  # Method to count neighbors per row
   def count_neighbors_row(neighbors, column)
     return 0 if neighbors.empty?
 
@@ -101,4 +126,37 @@ class Board
       puts ''
     end
   end
+=begin
+class Cell
+  def print_char
+    raise NotImplementedError, "Debes implementar esto en las subclases"
+  end
+end
+
+class AliveCell < Cell
+  def print_char
+    "#{ALIVE_CELL_CHAR} "
+  end
+end
+
+class DeadCell < Cell
+  def print_char
+    "#{DEAD_CELL_CHAR} "
+  end
+end
+
+class Board
+  # ...
+
+  def print_board
+    @board.each do |row|
+      row.each do |cell|
+        print cell.print_char
+      end
+      puts ''
+    end
+  end
+end
+
+=end
 end
