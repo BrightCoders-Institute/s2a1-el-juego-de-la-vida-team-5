@@ -46,7 +46,7 @@ This game was developed by Juan Blas, Laisha Contreras, Erik Gómez and Alan Her
 
 ## Badges
 
-[Ruby](https://www.ruby-lang.org/es/)
+![Ruby](https://img.shields.io/badge/ruby-%23CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white)
 
 
 
