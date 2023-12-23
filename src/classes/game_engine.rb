@@ -4,9 +4,7 @@ require_relative './board'
 
 # Class to initialize the game.
 class GameEngine
-  def initialize
-    initialize_game
-  end
+  def initialize; end
 
   private
 

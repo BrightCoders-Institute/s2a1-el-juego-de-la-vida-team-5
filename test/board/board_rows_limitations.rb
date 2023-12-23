@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../../src/classes/board'
-require_relative './abstract_board_generation_test'
+require_relative './inheritance_classes/abstract_board_generation_test'
 
 # Class to test Board class rows limitations.
 class RowsLimitationsTest < TestAbstractBoardGeneration

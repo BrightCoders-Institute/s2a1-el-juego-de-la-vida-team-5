@@ -1,14 +1,15 @@
 # frozen_string_literal: true
 
 require_relative '../../src/classes/board'
-require_relative './abstract_board_generation_test'
+require_relative '../../src/classes/cell/cell'
+require_relative './inheritance_classes/abstract_board_generation_test'
 
 # Class to test Board class patterns generation.
 class TestBoardPatternsGeneration < TestAbstractBoardGeneration
   private
 
   def count_board_alive_cells(board)
-    board.sum { |row| row.sum { |cell| cell } }
+    board.sum { |row| row.sum { |cell| cell.class::VALUE } }
   end
 
   public
@@ -23,7 +24,7 @@ class TestBoardPatternsGeneration < TestAbstractBoardGeneration
     @board.board.each do |row|
       assert_kind_of Array, row
       row.each do |cell|
-        assert_kind_of Integer, cell
+        assert_kind_of Cell, cell
       end
     end
   end

@@ -1,7 +1,6 @@
 ![BrightCoders Logo](img/logo.png)
 
-# El juego de la vida
-
+# Conway's Game of Life
 ## Table of contents
 
 1. [Description](#description)
@@ -16,7 +15,7 @@
 
 Conway's game of life was developed in Ruby, a game that relies on some mathematical rules to be played.
 
-## Goals
+## 🎯Goals
 
 - Practice Ruby semantics and syntax
 - Use RuboCop to improve Ruby code quality
@@ -38,7 +37,7 @@ Conway's game of life was developed in Ruby, a game that relies on some mathemat
 
 ## How to Use the Project.
 
-Run it using "ruby main.rb". It will end until all the cells die.
+Run it using "ruby main.rb" in the folder "src". It will end until all the cells die.
 
 ## Credits
 
@@ -47,7 +46,7 @@ This game was developed by Juan Blas, Laisha Contreras, Erik Gómez and Alan Her
 
 ## Badges
 
-![Ruby](https://www.ruby-lang.org/es/)
+[Ruby](https://www.ruby-lang.org/es/)
 
 
 

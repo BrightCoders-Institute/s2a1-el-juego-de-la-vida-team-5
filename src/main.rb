@@ -3,4 +3,4 @@
 require_relative './classes/game_engine'
 
 # Main method.
-GameEngine.new
+GameEngine.new.initialize_game

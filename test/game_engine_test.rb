@@ -9,7 +9,7 @@ class TestGameEngine < Minitest::Test
   end
 
   def test_clean_console
-    # Assuming clear_console is void and just execute system command
+    # Assuming clear_console is void and just execute system command.
     assert_silent { @game_engine.send(:clean_console) }
   end
 
